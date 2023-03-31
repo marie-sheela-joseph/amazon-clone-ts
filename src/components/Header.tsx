@@ -16,7 +16,7 @@ const Header=()=>{
                     </div>
                     <div className='header__search'>
                         <input type={"text"} value="" />                        
-                        <SearchIcon/>
+                        <SearchIcon className="header__search__icon"/>
                     </div>
                     <div className='header__nav'>
                     <Link to={"/login"} className='header__link'>
