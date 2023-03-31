@@ -26,10 +26,12 @@
     border: none;
     width: 100%;
 }
-.header__search i{
+.header__search__icon{
     background: #cd9042;
-    padding: .5rem;
-    height: 2.2rem;
+    padding: .5rem;    
+    font-size: large !important;
+    width: 2.2rem !important;    
+    height: 2.2rem !important;
 }
 .header__nav{
     justify-content: space-evenly;    
