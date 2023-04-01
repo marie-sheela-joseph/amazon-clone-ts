@@ -1,0 +1,9 @@
+.footer{
+    background-color: #131A22;
+    color: white;    
+}
+.footer__info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
