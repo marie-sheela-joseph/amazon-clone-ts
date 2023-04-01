@@ -21,13 +21,11 @@ export type InitialState={
   type ReducerAction={
     type:REDUCER_ACTION_TYPE,
     id?:number,
-    user?:object
+    user?:object|null
   }
   export function reducer(state: InitialState, action:ReducerAction):InitialState {
     switch (action.type) {
-        case REDUCER_ACTION_TYPE.ADD_PRODUCT: {
-            console.log('add')
-            return { ...state, cart: [...state.cart,action.id!] }}
+        case REDUCER_ACTION_TYPE.ADD_PRODUCT: return { ...state, cart: [...state.cart,action.id!] }
         case REDUCER_ACTION_TYPE.REMOVE_FROM_CART: return { ...state, cart: state.cart.filter((p) => p !== action.id) }
         case REDUCER_ACTION_TYPE.SET_USER: return { ...state, user: action.user! }
         default: return state;

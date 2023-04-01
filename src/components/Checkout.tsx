@@ -4,8 +4,10 @@ import CheckoutProduct from './CheckoutProduct'
 import './Checkout.css'
 function Checkout() {
     const appContext=useContext(AppContext)     
-    // let total = state.cart.reduce((acc, id) => {
-    //     return acc + state.products.find((p) => p.id === id).price
+    //typescript error - appContext.state.products.find could be undefined
+    
+    // let total = appContext.state.cart.reduce((acc, id) => {
+    //     return acc + appContext.state.products.find((p) => p.id === id).price
     // }, 0)
     return (
         <section className='checkout'>

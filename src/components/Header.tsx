@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { AppContext } from "../App";
 
 const Header=()=>{
-    const appContext=useContext(AppContext)    
+    const appContext=useContext(AppContext)        
     return (
         <div>
             <header className='header'>
@@ -24,6 +24,8 @@ const Header=()=>{
                     <div className='header__nav'>
                     <Link to={"/login"} className='header__link'>
                             <div>
+                                {/* typescript error - type of user is object which does not have email property in it  */}
+                                {/* <p className='header__optionLineOne'>Hello{appContext.state.user.email}</p> */}
                                 <p className='header__optionLineOne'>Hello</p>                                
                                 <p className='header__optionLineTwo'>Sign in</p>
                             </div>
