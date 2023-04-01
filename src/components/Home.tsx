@@ -1,9 +1,13 @@
 import Banner from './Banner';
+import Products from './Products';
+import Footer from './Footer';
 
 const Home=()=>{
     return (
         <>
-            <Banner />            
+            <Banner />   
+            <Products />   
+            <Footer />             
         </>
     );
 }
