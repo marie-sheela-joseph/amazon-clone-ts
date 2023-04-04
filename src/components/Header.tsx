@@ -23,11 +23,10 @@ const Header=()=>{
                     </div>
                     <div className='header__nav'>
                     <Link to={"/login"} className='header__link'>
-                            <div>
-                                {/* typescript error - type of user is object which does not have email property in it  */}
-                                {/* <p className='header__optionLineOne'>Hello{appContext.state.user.email}</p> */}
+                            <div>                                
+                                <p className='header__optionLineOne'>Hello{appContext.state.user?.email}</p>
                                 <p className='header__optionLineOne'>Hello</p>                                
-                                <p className='header__optionLineTwo'>Sign in</p>
+                                <p className='header__optionLineTwo'>{appContext.state.user?'Sign Out':'Sign in'}</p>
                             </div>
                         </Link>
                         <Link to={"/checkout"} className='header__link'>
