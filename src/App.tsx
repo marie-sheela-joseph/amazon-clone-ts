@@ -15,7 +15,7 @@ function App() {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         console.log(authUser)
-        dispatch({ type: REDUCER_ACTION_TYPE.SET_USER, user: authUser })
+        dispatch({ type: REDUCER_ACTION_TYPE.SET_USER, user: {email:authUser.email||'',uid:authUser.uid} })        
       }
       else {
         dispatch({ type: REDUCER_ACTION_TYPE.SET_USER, user: null })

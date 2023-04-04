@@ -1,7 +1,10 @@
+type User={email:string,uid:string}|null
+
 export type InitialState={
     products:{id:number,title:string,price:number,rating:number,image:string}[],
     cart:number[],
-    user:object|null
+    user:User
+    // user:object|null
   }
  export const initialState = {
     products: [{ id: 1, title: 'Apple iPhone 14 (128 GB) - Blue', price: 794.00, rating: 4, image: './assets/p_1.jpg' },
@@ -21,13 +24,13 @@ export type InitialState={
   type ReducerAction={
     type:REDUCER_ACTION_TYPE,
     id?:number,
-    user?:object|null
+    user?:User
   }
   export function reducer(state: InitialState, action:ReducerAction):InitialState {
     switch (action.type) {
         case REDUCER_ACTION_TYPE.ADD_PRODUCT: return { ...state, cart: [...state.cart,action.id!] }
         case REDUCER_ACTION_TYPE.REMOVE_FROM_CART: return { ...state, cart: state.cart.filter((p) => p !== action.id) }
-        case REDUCER_ACTION_TYPE.SET_USER: return { ...state, user: action.user! }
+        case REDUCER_ACTION_TYPE.SET_USER: return { ...state, user: action.user||null}
         default: return state;
     }
   }

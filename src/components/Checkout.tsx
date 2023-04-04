@@ -3,12 +3,11 @@ import { AppContext } from "../App";
 import CheckoutProduct from './CheckoutProduct'
 import './Checkout.css'
 function Checkout() {
-    const appContext=useContext(AppContext)     
-    //typescript error - appContext.state.products.find could be undefined
+    const appContext=useContext(AppContext)         
     
-    // let total = appContext.state.cart.reduce((acc, id) => {
-    //     return acc + appContext.state.products.find((p) => p.id === id).price
-    // }, 0)
+    let total = appContext.state.cart.reduce((acc, id) => {
+        return acc + (appContext.state.products.find((p) => p.id === id)?.price||0)
+    }, 0)
     return (
         <section className='checkout'>
             <div className='checkout__ad_subTotal'>
@@ -16,7 +15,7 @@ function Checkout() {
                     <img src='./assets/creditCard.jpg' alt='credit card' />
                 </div>
                 <div className='checkout_subTotal'>
-                    {/* <p>Subtotal ({appContext.state.cart.length}) items:<strong>{total}</strong></p> */}
+                    <p>Subtotal ({appContext.state.cart.length}) items:<strong>{total}</strong></p>
                     <div>
                         <input type='checkbox' id='gift' />
                         <label htmlFor='gift'>This order contains a gift</label>
