@@ -24,8 +24,7 @@ const Header=()=>{
                     <div className='header__nav'>
                     <Link to={"/login"} className='header__link'>
                             <div>                                
-                                <p className='header__optionLineOne'>Hello{appContext.state.user?.email}</p>
-                                <p className='header__optionLineOne'>Hello</p>                                
+                                <p className='header__optionLineOne'>Hello {appContext.state.user?.email}</p>
                                 <p className='header__optionLineTwo'>{appContext.state.user?'Sign Out':'Sign in'}</p>
                             </div>
                         </Link>
